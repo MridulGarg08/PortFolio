@@ -264,7 +264,7 @@ const Portfolio = () => {
   //   --text-light: #666;
   // }
   return (
-    <div className="font-sans leading-relaxed min-h-screen overflow-x-hidden">
+    <div className="font-sans leading-relaxed min-h-screen ">
       <style jsx>{`
         :root {
           --primary: #3b82f6; /* Blue */
@@ -416,11 +416,11 @@ const Portfolio = () => {
           isScrolled ? "nav-scrolled" : "glass-effect"
         }`}
       >
-        <div className="w-full flex justify-between items-center px-4 md:px-8">
-          <div className="font-bold gradient-text text-xl md:text-2xl">
+        <div className="w-full flex justify-between items-center">
+          <div className="text-2xl font-bold gradient-text mx-8">
             Mridul Garg
           </div>
-          <div className="hidden md:block">
+          <div className="mx-8">
             <ul className="hidden md:flex space-x-8">
               {[
                 "home",
@@ -455,7 +455,7 @@ const Portfolio = () => {
         </div>
 
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 max-w-full bg-[var(--darker)] shadow-lg">
+          <div className="md:hidden absolute top-full left-0 w-full bg-[var(--darker)] shadow-lg">
             <ul className="flex flex-col items-center py-8 space-y-4">
               {[
                 "home",
@@ -667,7 +667,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* <section
+      <section
         id="education"
         className="py-16 w-full mx-auto px-8 fade-in bg-[var(--dark)]"
       >
@@ -694,45 +694,6 @@ const Portfolio = () => {
               </div>
               <div className="absolute left-1/2 transform -translate-x-1/2 bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center font-bold z-10 md:relative md:left-auto md:transform-none">
                 {item.year}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section> */}
-      <section
-        id="education"
-        className="py-16 w-full mx-auto px-8 fade-in bg-[var(--dark)]"
-      >
-        <h2 className="text-4xl font-bold text-center mb-16 gradient-text">
-          Education
-        </h2>
-        <div className="timeline relative">
-          {educationData.map((item, index) => (
-            <div
-              key={index}
-              className="mb-12 flex flex-col md:flex-row md:items-center md:justify-between relative"
-            >
-              {/* Year Bubble */}
-              <div className="flex items-center justify-center mb-6 md:mb-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2 z-10">
-                <div className="bg-blue-600 text-white w-14 h-14 rounded-full flex items-center justify-center font-bold shadow-lg">
-                  {item.year}
-                </div>
-              </div>
-
-              {/* Card */}
-              <div
-                className={`bg-white p-6 rounded-2xl shadow-xl flex-1 md:max-w-[45%] ${
-                  index % 2 === 1 ? "md:ml-auto" : "md:mr-auto"
-                }`}
-              >
-                <h3 className="text-lg font-bold mb-2">{item.title}</h3>
-                <h4 className="text-blue-600 font-semibold mb-3">
-                  {item.institution}
-                </h4>
-                <p className="text-gray-600 mb-3">{item.description}</p>
-                <p className="text-sm text-gray-500">
-                  <strong>Highlights:</strong> {item.courses}
-                </p>
               </div>
             </div>
           ))}
@@ -795,14 +756,15 @@ const Portfolio = () => {
         id="contact"
         className="py-24 bg-[var(--dark)] text-white fade-in w-full"
       >
-        <div className="container mx-auto px-4 md:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
+          <h2 className="text-4xl font-bold text-center mb-16 text-white">
             Get In Touch
           </h2>
-          <div className="grid md:grid-cols-2 gap-8 md:gap-16 overflow-hidden">
-            {/* LEFT INFO */}
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-stretch">
+            {/* LEFT COLUMN – Info */}
             <div>
-              <h3 className="text-xl md:text-2xl font-bold mb-6 md:mb-8 text-pink-300">
+              <h3 className="text-2xl font-bold mb-6 md:mb-8 text-pink-300">
                 Let's Connect!
               </h3>
               <p className="text-gray-300 mb-6 md:mb-8 leading-relaxed">
@@ -819,7 +781,7 @@ const Portfolio = () => {
                     <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mr-4 text-xl">
                       {item.icon}
                     </div>
-                    <div>
+                    <div className="overflow-hidden">
                       <h4 className="font-semibold">{item.label}</h4>
                       <p className="text-gray-300 break-words">{item.value}</p>
                     </div>
@@ -828,10 +790,73 @@ const Portfolio = () => {
               </div>
             </div>
 
-            {/* RIGHT FORM */}
-            <div className="bg-white bg-opacity-5 p-6 md:p-8 rounded-3xl backdrop-blur-sm w-full max-w-lg md:max-w-full">
-              <div className="space-y-4 md:space-y-6">
-                {/* ...form fields... */}
+            <div className="bg-white bg-opacity-5 p-6 sm:p-8 rounded-3xl backdrop-blur-sm w-full">
+              <div className="space-y-6">
+                <div>
+                  <label className="block text-pink-300 mb-2">Your Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder="Enter your name"
+                    className="w-full p-4 border-0 rounded-xl bg-white bg-opacity-10 
+                         text-white placeholder-gray-400 focus:bg-opacity-20 
+                         focus:outline-none transition-all"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-pink-300 mb-2">Your Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="Enter your email"
+                    className="w-full p-4 border-0 rounded-xl bg-white bg-opacity-10 
+                         text-white placeholder-gray-400 focus:bg-opacity-20 
+                         focus:outline-none transition-all"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-pink-300 mb-2">Subject</label>
+                  <input
+                    type="text"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleInputChange}
+                    placeholder="What's this about?"
+                    className="w-full p-4 border-0 rounded-xl bg-white bg-opacity-10 
+                         text-white placeholder-gray-400 focus:bg-opacity-20 
+                         focus:outline-none transition-all"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-pink-300 mb-2">Message</label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    rows={5}
+                    placeholder="Your message here..."
+                    className="w-full p-4 border-0 rounded-xl bg-white bg-opacity-10 
+                         text-white placeholder-gray-400 focus:bg-opacity-20 
+                         focus:outline-none transition-all resize-none"
+                  />
+                </div>
+
+                <button
+                  onClick={handleFormSubmit}
+                  disabled={isSubmitting}
+                  className="w-full gradient-bg text-white py-4 px-8 rounded-full 
+                       font-semibold transition-transform duration-300 
+                       hover:transform hover:-translate-y-1 disabled:opacity-50"
+                >
+                  {isSubmitting ? "Sending..." : "Send Message 🚀"}
+                </button>
               </div>
             </div>
           </div>
