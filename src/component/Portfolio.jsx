@@ -264,7 +264,7 @@ const Portfolio = () => {
   //   --text-light: #666;
   // }
   return (
-    <div className="font-sans leading-relaxed min-h-screen ">
+    <div className="font-sans leading-relaxed min-h-screen overflow-x-hidden">
       <style jsx>{`
         :root {
           --primary: #3b82f6; /* Blue */
@@ -455,7 +455,7 @@ const Portfolio = () => {
         </div>
 
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-[var(--darker)] shadow-lg">
+          <div className="md:hidden absolute top-full left-0 max-w-full bg-[var(--darker)] shadow-lg">
             <ul className="flex flex-col items-center py-8 space-y-4">
               {[
                 "home",
@@ -795,7 +795,7 @@ const Portfolio = () => {
         id="contact"
         className="py-24 bg-[var(--dark)] text-white fade-in w-full"
       >
-        <div className="max-w-6xl mx-auto px-4 md:px-8">
+        <div className="w-full max-w-6xl mx-auto px-4 md:px-8 overflow-hidden">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16">
             Get In Touch
           </h2>
@@ -827,7 +827,7 @@ const Portfolio = () => {
               </div>
             </div>
 
-            <div className="bg-white bg-opacity-5 p-6 md:p-8 rounded-3xl backdrop-blur-sm">
+            <div className="bg-white bg-opacity-5 p-6 md:p-8 rounded-3xl backdrop-blur-sm w-full max-w-lg mx-auto">
               <div className="space-y-4 md:space-y-6">
                 <div>
                   <label className="block text-pink-300 mb-2">Your Name</label>
