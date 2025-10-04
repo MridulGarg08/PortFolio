@@ -447,7 +447,7 @@ const Portfolio = () => {
           </div>
 
           <button
-            className="md:hidden text-2xl"
+            className="md:hidden text-2xl px-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             ☰
@@ -667,7 +667,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      <section
+      {/* <section
         id="education"
         className="py-16 w-full mx-auto px-8 fade-in bg-[var(--dark)]"
       >
@@ -694,6 +694,45 @@ const Portfolio = () => {
               </div>
               <div className="absolute left-1/2 transform -translate-x-1/2 bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center font-bold z-10 md:relative md:left-auto md:transform-none">
                 {item.year}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section> */}
+      <section
+        id="education"
+        className="py-16 w-full mx-auto px-4 md:px-8 fade-in bg-[var(--dark)]"
+      >
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 gradient-text">
+          Education
+        </h2>
+        <div className="timeline relative py-8">
+          {educationData.map((item, index) => (
+            <div
+              key={index}
+              className="mb-12 flex flex-col md:flex-row md:items-center md:justify-between relative"
+            >
+              {/* Year Bubble */}
+              <div className="flex items-center justify-center mb-6 md:mb-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2 z-10">
+                <div className="bg-blue-600 text-white w-14 h-14 rounded-full flex items-center justify-center font-bold shadow-lg">
+                  {item.year}
+                </div>
+              </div>
+
+              {/* Card */}
+              <div
+                className={`bg-white p-6 rounded-2xl shadow-xl flex-1 md:max-w-[45%] ${
+                  index % 2 === 1 ? "md:ml-auto" : "md:mr-auto"
+                }`}
+              >
+                <h3 className="text-lg font-bold mb-2">{item.title}</h3>
+                <h4 className="text-blue-600 font-semibold mb-3">
+                  {item.institution}
+                </h4>
+                <p className="text-gray-600 mb-3">{item.description}</p>
+                <p className="text-sm text-gray-500">
+                  <strong>Highlights:</strong> {item.courses}
+                </p>
               </div>
             </div>
           ))}
