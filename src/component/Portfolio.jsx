@@ -180,21 +180,6 @@ const Portfolio = () => {
       ],
       technologies: ["HTML", "CSS", "JavaScript", "Zoho Creator", "Deluge"],
     },
-    {
-      company: "Novem Controls",
-      position: "Fullstack Developer Intern",
-      duration: "Jan. 2025 - Jun. 2025",
-      location: "Chandigarh, India",
-      description:
-        "Collaborated on multiple client projects, focusing on responsive UI development and REST API integration. Gained hands-on experience with modern frontend frameworks.",
-      achievements: [
-        "Contributed to 2 internal web applications using React.js, Node.js, Express, and MongoDB, assisting in both front-end and back-end tasks",
-        "Implemented and tested 3+ features (form validation, API integration, UI enhancements) and resolved 8+ bugs, leading to 10% performance improvement",
-        "Leveraged REST APIs, Git version control, and Agile practices to raise code review efficiency by 15% and improve collaboration across 2 ongoing projects",
-        "Engaged in peer code reviews and pair programming, reducing post-deployment bugs by 15%",
-      ],
-      technologies: ["React", "JavaScript", "Tailwind CSS", "REST APIs", "Git"],
-    },
   ];
 
   const projects = [
